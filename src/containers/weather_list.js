@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Sparklines, SparklinesLine } from 'react-sparklines';
+import { Sparklines, SparklinesLine, SparklinesSpots, SparklinesBars } from 'react-sparklines';
 
 
 class WeatherList extends Component {
@@ -21,11 +21,13 @@ class WeatherList extends Component {
                 <td>
                   <Sparklines height={120} width={180} data={pressures}>
                     <SparklinesLine color="blue" />
+                    <SparklinesSpots />
                   </Sparklines>
                 </td>
                 <td>
                   <Sparklines height={120} width={180} data={humidities}>
-                    <SparklinesLine color="green" />
+                    <SparklinesBars style={{ stroke: "white", fill: "#41c3f9", fillOpacity: ".25" }} />
+                    <SparklinesLine style={{ stroke: "#41c3f9", fill: "none" }} />
                   </Sparklines>
                 </td>
             </tr>
